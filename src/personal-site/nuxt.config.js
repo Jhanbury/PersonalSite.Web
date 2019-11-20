@@ -42,6 +42,7 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/vuetify',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
   ],

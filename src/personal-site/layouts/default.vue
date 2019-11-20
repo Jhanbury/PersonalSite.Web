@@ -7,6 +7,7 @@
       fixed
       app
     >
+    <!-- <logo/> -->
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -48,7 +49,11 @@
 </template>
 
 <script>
+import Logo  from "~/components/Logo.vue";
 export default {
+  components: {
+    Logo
+  },
   data () {
     return {
       clipped: false,
@@ -56,14 +61,29 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-home',
+          title: 'Home',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: 'mdi-source-repository',
+          title: 'Github',
+          to: '/github'
+        },
+        {
+          icon: 'mdi-lightbulb-on',
+          title: 'Projects',
+          to: '/projects'
+        },
+        {
+          icon: 'mdi-briefcase',
+          title: 'Work History',
+          to: '/work-history'
+        },
+        {
+          icon: 'mdi-video-account',
+          title: 'Videos',
+          to: '/videos'
         }
       ],
       miniVariant: false,

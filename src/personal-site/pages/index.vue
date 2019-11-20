@@ -11,7 +11,7 @@
       </div>
       </br>
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-      <b-card-group columns>        
+      <b-card-group deck>        
         <b-card exact v-for="tile in tiles" v-bind:key="tile.id" @click="navigate(tile.route)" :title="tile.title" bg-variant="dark" text-variant="white" class="tile text-center" >          
             <lottie-player 
               :src="tile.animation"  background="transparent"  speed="1"    loop  autoplay >
@@ -49,9 +49,15 @@ export default {
         },
         {
           id: 3,
-          title: 'Githu Repos',
+          title: 'Github Repos',
           animation: 'animations/repos.json',
           route: 'github'
+        },
+        {
+          id: 4,
+          title: 'Videos',
+          animation: 'animations/video.json',
+          route: 'videos'
         }
       ]
     }
@@ -69,6 +75,9 @@ export default {
   .bg-dark {
     background-color: #424242 !important;
   }
+  /* .tile{
+    max-width: 200px;
+  } */
   .tile:hover {
     transform: scale(1.05);
 }
