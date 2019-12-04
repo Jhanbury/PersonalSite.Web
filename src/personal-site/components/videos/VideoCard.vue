@@ -1,6 +1,6 @@
 <template>
   <b-card
-    bg-variant="dark"
+    bg-variant="default"
     @click="openVideo(video.url)"    
     :title="video.title"    
     :img-src="video.thumbnailUrl"
@@ -34,5 +34,10 @@ export default {
 </script>
 
 <style>
-
+    .card-body{
+        background: #303030 !important;
+    }
+    .card-footer{
+        background: #303030 !important;
+    }
 </style>

@@ -13,16 +13,16 @@
             platform.platform | icon
           }}</v-icon></v-col
         >
-        <v-col v-show="!platform.isLive" md="1">
+        <v-col v-show="platform.isLive" md="1">
           <v-icon x-small="" color="red">mdi-circle</v-icon><span> Live</span>
         </v-col>
         <v-spacer></v-spacer>
       </v-row>
       <v-row>
         <v-col class="title" md="2">Latest Videos</v-col>
-        <v-spacer></v-spacer>
+        <!-- <v-spacer></v-spacer> -->
         <v-col md="2">
-          <v-btn text color="blue" class="view-all">View All</v-btn>
+          <v-btn text color="blue" @click="openAccount(platform.link)" class="view-all">View All</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -46,6 +46,11 @@ export default {
   },
   props: {
     platform: Object
+  },
+  methods:{
+    openAccount(url){
+      window.open(url)
+    }
   },
   filters: {
     icon: function(value) {
