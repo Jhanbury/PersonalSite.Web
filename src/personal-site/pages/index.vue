@@ -10,6 +10,7 @@
         <logo />              
       </div>
       </br>
+      </br>
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
       <b-card-group deck>        
         <b-card exact v-for="tile in tiles" v-bind:key="tile.id" @click="navigate(tile.route)" :title="tile.title" bg-variant="dark" text-variant="white" class="tile text-center" >          
@@ -17,7 +18,12 @@
               :src="tile.animation"  background="transparent"  speed="1"    loop  autoplay >
             </lottie-player>
         </b-card>
-      </b-card-group>      
+      </b-card-group>
+      </br>
+      </br>
+      <div class="text-center">        
+        <social-links></social-links>          
+      </div>      
     </v-flex>
   </v-layout>
 </template>
@@ -25,11 +31,13 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import SocialLinks from '~/components/social/SocialLinks.vue'
 
 export default {
   components: {
     Logo,
-    VuetifyLogo
+    VuetifyLogo,
+    SocialLinks
   },
   data(){
     return {
