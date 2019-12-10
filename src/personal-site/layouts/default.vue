@@ -1,36 +1,41 @@
 <template>
-  <v-app dark>
+  <v-app :style="{background: $vuetify.theme.themes[theme].background}">
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
+      :color="$vuetify.theme.themes[theme].accent"
       :clipped="clipped"
+      :style="{background: $vuetify.theme.themes[theme].background}"
       fixed
       app
     >
     <!-- <logo/> -->
       <v-list>
         <v-list-item
+          
           v-for="(item, i) in items"
             :key="i"
+            
             exact
             @click="navigate(item.to)"
         >
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon :color="$vuetify.theme.themes[theme].accent">{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
+            <v-list-item-title :style="{color: $vuetify.theme.themes[theme].accent}" v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
+      :style="{background: $vuetify.theme.themes[theme].background}"
       :clipped-left="clipped"
       fixed
       app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />      
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title v-text="title" :style="{color: $vuetify.theme.themes[theme].accent}" />
       <v-spacer />      
     </v-app-bar>
     <v-content>
@@ -53,6 +58,11 @@ import Logo  from "~/components/Logo.vue";
 export default {
   components: {
     Logo
+  },
+  computed:{
+    theme(){
+      return (this.$vuetify.theme.dark) ? 'dark' : 'light'
+    }
   },
   data () {
     return {

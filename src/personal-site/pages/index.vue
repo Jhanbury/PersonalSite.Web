@@ -5,10 +5,10 @@
     align-center
   >
     <v-flex xs12 sm8 md6>
-      </br>
+      <!-- </br>
       <div class="text-center">
         <logo />              
-      </div>
+      </div> -->
       </br>
       </br>
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
