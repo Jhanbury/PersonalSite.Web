@@ -1,7 +1,7 @@
 <template>
   <v-timeline-item :icon="item.timeLineType | typeIcon">
         <template v-slot:opposite>
-            <span>{{ $dateFns.format(item.date, 'do MMMM yyyy')}}</span>
+            <span>{{ $dateFns.format(item.date, 'do MMMM yyyy') }}</span>
           </template>
       <v-card class="elevation-2" >          
           <v-card-title class="headline">{{item.title}}</v-card-title>

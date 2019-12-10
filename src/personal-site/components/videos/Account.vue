@@ -26,7 +26,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <p v-show="platform.videos.length == 0"> No Videos Available!</p>
+    <p v-show="platform.videos.length == 0" class="ml-5"> No Videos Available!</p>
     <b-card-group deck v-show="platform.videos.length > 0">
       <video-card
         v-for="video in platform.videos"
@@ -77,7 +77,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .view-all {
   text-decoration: underline;
 }

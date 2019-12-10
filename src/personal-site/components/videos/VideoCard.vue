@@ -10,11 +10,11 @@
     style="max-width: 20rem;"
     class="mb-2"  >
     <b-card-sub-title>
-        <small class="text-muted">Views: {{video.viewCount}}</small>
+        <small class="text-light">Views: {{video.viewCount}}</small>
     </b-card-sub-title>
     
     <template v-slot:footer>
-        <small class="text-muted">{{video.publishDate}}</small>
+        <small class="text-light">Published - {{ $dateFns.format(video.publishDate, 'do MMMM yyyy')}}</small>
     </template>
     
   </b-card>
