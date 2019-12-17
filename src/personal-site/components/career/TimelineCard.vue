@@ -27,7 +27,7 @@ export default {
                     return 'mdi-certificate'                    
                     break;
                 case 'Job':
-                    return 'mdi-work'                    
+                    return 'mdi-briefcase-account'                    
                 default:
                     return 'mdi-work'
                     break;

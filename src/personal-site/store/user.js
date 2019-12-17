@@ -9,8 +9,7 @@ export const mutations = {
 }
 export const actions = {
   async getSocialLinks({ commit }, userId) {
-    const url = 'http://personal-site-api.azurewebsites.net/'
-    const fullUrl = `${url}api/userinfo/${userId}/socialmediaaccounts`
+    const fullUrl = `api/userinfo/${userId}/socialmediaaccounts`
     const result = await this.$axios.get(fullUrl)
     if (result) {
       commit('update', result.data)

@@ -5,13 +5,23 @@
         {{repo.description}}
       </b-card-text>
       <i style="font-size: 30px;" :class="repo.language | languageIcon"></i>
-      <b-card-text class="small text-muted">Last updated 3 mins ago</b-card-text>
+      <v-container>
+          <v-row>
+              <GithubCardCounter icon="mdi-star" cols="3" :count="repo.stargazers_count" iconColor="white"/>
+              <GithubCardCounter icon="mdi-source-branch" cols="3" :count="repo.forks" iconColor="white"/>
+              <GithubCardCounter icon="mdi-alert-circle-outline" cols="3" :count="repo.open_issues" iconColor="white"/>
+              <GithubCardCounter icon="mdi-eye-outline" cols="3" :count="repo.watchers" iconColor="white"/>
+          </v-row>
+      </v-container>
     </b-card>
-
 </template>
 
 <script>
+import GithubCardCounter from "./GithubCardCounter";
 export default {
+    components: {
+        GithubCardCounter
+    },
     props: {
         repo: Object
     },

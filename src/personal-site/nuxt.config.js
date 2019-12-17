@@ -1,5 +1,4 @@
 import colors from 'vuetify/es5/util/colors'
-
 export default {
   mode: 'spa',
   /*
@@ -21,6 +20,8 @@ export default {
       { rel: 'stylesheet', href: 'devicon.css' },
       { rel: 'stylesheet', href: 'devicon-colors.css' }
     ]
+  },
+  env: {
   },
   /*
    ** Customize the progress-bar color
@@ -48,13 +49,16 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/vuetify',
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/dotenv'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: process.env.NUXT_ENV_API_URL
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module

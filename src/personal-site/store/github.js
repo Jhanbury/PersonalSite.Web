@@ -9,8 +9,7 @@ export const mutations = {
 }
 export const actions = {
   async getGithubRepos({ commit }, userId) {
-    const url = 'http://personal-site-api.azurewebsites.net/'
-    const fullUrl = `${url}api/github-repos`
+    const fullUrl = `api/userinfo/1/coderepos`
     const result = await this.$axios.get(fullUrl)
     if (result) {
       commit('update', result.data)

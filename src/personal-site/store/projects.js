@@ -9,8 +9,7 @@ export const mutations = {
 }
 export const actions = {
   async getProjects({ commit }, userId) {
-    const url = 'http://personal-site-api.azurewebsites.net/'
-    const fullUrl = `${url}api/userinfo/${userId}/projects`
+    const fullUrl = `api/userinfo/${userId}/projects`
     const result = await this.$axios.get(fullUrl)
     if (result) {
       commit('update', result.data)
