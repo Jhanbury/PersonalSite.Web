@@ -6,12 +6,18 @@
   >
     <v-flex xs12 sm8 md6>
       </br>      
-      <div class="mt-10 text-center">
+      <div class="mt-6 text-center">
         <div class="display-2">{{user.firstName }} {{user.lastName}} </div>    
       </div>
       
-      <div class="mt-10 text-center">
+      <div class="mt-8
+       text-center">
         <div class="ml-12 mr-12 pl-12 pr-12 title">{{user.personalStatement }} </div>    
+      </div>
+
+      <div class="mt-10 text-center">
+        <v-chip><v-icon left color="red">mdi-map-marker</v-icon>
+          {{user.currentLocation }}</v-chip>    
       </div>
       
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -24,11 +30,7 @@
       </b-card-group>
       <div class="mt-12 text-center">        
         <social-links></social-links>          
-      </div> 
-      <div class="mt-12 text-center">        
-        <v-btn class="ma-2" outlined color="white">Get in Touch</v-btn>          
-      </div> 
-           
+      </div>     
     </v-flex>
   </v-layout>
 </template>

@@ -36,7 +36,8 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />      
       <v-toolbar-title v-text="title" :style="{color: $vuetify.theme.themes[theme].accent}" />
-      <v-spacer />      
+      <v-spacer /> 
+      <v-btn class="ma-2" outlined color="white">Get in Touch</v-btn>     
     </v-app-bar>
     <v-content>
       <v-container>

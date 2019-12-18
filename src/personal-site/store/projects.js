@@ -4,7 +4,7 @@ export const state = () => ({
 
 export const mutations = {
   update(state, projects) {
-    state.repos = projects
+    state.projects = projects
   }
 }
 export const actions = {

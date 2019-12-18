@@ -9,7 +9,7 @@ export const mutations = {
 }
 export const actions = {
   async getGithubRepos({ commit }, userId) {
-    const fullUrl = `api/userinfo/1/coderepos`
+    const fullUrl = `api/userinfo/${userId}/coderepos`
     const result = await this.$axios.get(fullUrl)
     if (result) {
       commit('update', result.data)
