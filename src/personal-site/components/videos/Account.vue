@@ -3,36 +3,32 @@
     <v-container>
       <v-row class="d-flex flex-row justify-left">
         <v-col md="1">
-          <v-avatar>
-            <img :src="platform.iconUrl" alt="John" />
-          </v-avatar>
+          <account-icon :platform="platform" />
         </v-col>
-        <v-col md="2" class="headline">{{ platform.title }}</v-col>
-        <v-col md="1"
-          ><v-icon :color="platform.platform | iconColor" dark large>{{
-            platform.platform | icon
-          }}</v-icon></v-col
-        >
-        <v-col v-show="platform.isLive" md="1">
-          <v-icon x-small="" color="red">mdi-circle</v-icon><span> Live</span>
+        <v-col md="6" class="d-flex flex-row align-center headline">
+          <div class="d-flex flex-row align-center">
+            <div>{{ platform.title }}</div>
+            <live-stream-indicator v-show="platform.isLive" class="ml-4" :url="platform.link" />
+            <v-spacer></v-spacer>
+          </div>
         </v-col>
-        <v-spacer></v-spacer>
       </v-row>
       <v-row>
-        <v-col class="title" md="2">Latest Videos</v-col>
-        <!-- <v-spacer></v-spacer> -->
-        <v-col md="2">
-          <v-btn text color="blue" @click="openAccount(platform.link)" class="view-all">View All</v-btn>
-        </v-col>
+        <v-col md="6" class="d-flex flex-row align-center headline">
+          <div class="title">Latest Videos</div>
+          <v-btn
+          v-show="platform.videos.length > 0"
+            text
+            color="blue"
+            @click="openAccountVideos(platform.link)"
+            class="ml-8 view-all"
+          >View All</v-btn>
+        </v-col>      
       </v-row>
     </v-container>
-    <p v-show="platform.videos.length == 0" class="ml-5"> No Videos Available!</p>
+    <p v-show="platform.videos.length == 0" class="ml-5">No Videos Available!</p>
     <b-card-group deck v-show="platform.videos.length > 0">
-      <video-card
-        v-for="video in platform.videos"
-        v-bind:key="video.id"
-        :video="video"
-      ></video-card>
+      <video-card v-for="video in platform.videos" v-bind:key="video.id" :video="video"></video-card>
     </b-card-group>
     <v-divider />
   </v-sheet>
@@ -40,38 +36,20 @@
 
 <script>
 import VideoCard from './VideoCard.vue'
+import LiveStreamIndicator from './LiveStreamIndicator.vue'
+import AccountIcon from './AccountIcon.vue'
 export default {
   components: {
-    VideoCard
+    VideoCard,
+    LiveStreamIndicator,
+    AccountIcon
   },
   props: {
     platform: Object
   },
-  methods:{
-    openAccount(url){
-      window.open(url)
-    }
-  },
-  filters: {
-    icon: function(value) {
-      switch (value) {
-        case 'Twitch': {
-          return 'mdi-twitch'
-        }
-        case 'YouTube': {
-          return 'mdi-youtube'
-        }
-      }
-    },
-    iconColor: function(value) {
-      switch (value) {
-        case 'Twitch': {
-          return 'purple'
-        }
-        case 'YouTube': {
-          return 'red'
-        }
-      }
+  methods: {
+    openAccountVideos(url) {
+      window.open(url + '/videos')
     }
   }
 }
@@ -81,7 +59,7 @@ export default {
 .view-all {
   text-decoration: underline;
 }
-.pad-5{
-    padding-left: 15px;
+.pad-5 {
+  padding-left: 15px;
 }
 </style>

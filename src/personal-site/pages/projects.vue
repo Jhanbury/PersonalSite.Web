@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="mb-10 mt-8 display-2 text-center">Projects</div>
+    <div class="mb-10 mt-4 text-center">
+      <page-header title="My Projects"/>
+    </div>
     <v-carousel hide-delimiter-background="true" hide-delimiters="true" height="auto">
       <ProjectCarouselCard v-for="project in projects" :key="project.id" :project="project"/>
     </v-carousel>
@@ -9,10 +11,11 @@
 
 <script>
 import ProjectCarouselCard from '../components/projects/ProjectCarouselCard'
-
+import PageHeader from '../components/shared/PageHeader.vue'
 export default {
   components: {
-     ProjectCarouselCard
+     ProjectCarouselCard,
+     PageHeader
      
   },
   computed: {

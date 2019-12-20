@@ -1,8 +1,7 @@
 <template>
 <v-container>
   <v-row class="d-flex justify-center mb-6">
-    <h3>Career Timeline</h3>
-  
+    <page-header title="Career Timeline"/>  
   </v-row>
   <v-row justify="center" class="d-flex mb-2">
     <v-col cols="10">
@@ -16,9 +15,11 @@
 
 <script>
 import TimelineCard from "../components/career/TimelineCard.vue";
+import PageHeader from '../components/shared/PageHeader.vue'
 export default {
   components: {
-    TimelineCard
+    TimelineCard,
+    PageHeader
   },
   computed:{
     timeline(){

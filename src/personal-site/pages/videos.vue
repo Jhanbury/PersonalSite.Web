@@ -1,14 +1,27 @@
 <template>
-<div>
-  <Account v-for="platform in platforms" v-bind:key="platform.id" :platform="platform" />
-</div>
+<v-container>
+  <v-row class="d-flex justify-center mb-6">
+    <page-header title="Video Platforms"/>  
+  </v-row>
+  <v-row justify="center" class="d-flex mb-2">
+    <v-col cols="10">
+      <div>
+        <Account v-for="platform in platforms" v-bind:key="platform.id" :platform="platform" />
+        </div>
+
+    </v-col>
+  </v-row>
+</v-container>
+
 </template>
 
 <script>
 import Account from '~/components/videos/Account.Vue'
+import PageHeader from '../components/shared/PageHeader.vue'
 export default {
     components: {
-        Account
+        Account,
+        PageHeader
     },
     computed: {
         platforms(){
