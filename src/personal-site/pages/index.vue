@@ -1,36 +1,50 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex xs12 sm8 md6>
-      </br>      
-      <div class="mt-6 text-center">
-        <div class="display-2">{{user.firstName }} {{user.lastName}} </div>    
-      </div>
-      
-      <div class="mt-8
-       text-center">
-        <div class="ml-12 mr-12 pl-12 pr-12 title">{{user.personalStatement }} </div>    
-      </div>
 
-      <div class="mt-10 text-center">
-        <v-chip><v-icon left color="red">mdi-map-marker</v-icon>
-          {{user.currentLocation }}</v-chip>    
-      </div>
-      
+  <v-layout column justify-center align-center>
+    <v-flex xs12 sm8 md10>
+      <b-jumbotron lead=".NET Fullstack Developer" bg-variant="dark">
+        <template v-slot:header>{{user.firstName }} {{user.lastName}}</template>
+        <hr class="my-4" />
+        <p class>{{user.personalStatement}}</p>
+
+        <!-- </br>      -->
+        <!-- <div class="mt-6 text-center">
+          <div class="display-2">{{user.firstName }} {{user.lastName}}</div>    
+        </div>
+        <div class="mt-8 text-center">
+          <div class="display-1">.NET Fullstack Developer</div>    
+        </div>-->
+
+        <!-- <div class="mt-8
+        text-center">
+          <div class="ml-12 mr-12 pl-12 pr-12 title">{{user.personalStatement }} </div>    
+        </div>-->
+        <div class="mt-10 text-center">
+          <v-chip color="#212221">
+            <v-icon left color="red">mdi-map-marker</v-icon>
+            {{user.currentLocation }}
+          </v-chip>
+        </div>
+      </b-jumbotron>
+
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-      <b-card-group class="mt-12" deck>        
-        <b-card exact v-for="tile in tiles" v-bind:key="tile.id" @click="navigate(tile.route)" :title="tile.title" bg-variant="dark" text-variant="white" class="tile text-center" >          
-            <lottie-player 
-              :src="tile.animation"  background="transparent"  speed="1"    loop  autoplay >
-            </lottie-player>
+      <b-card-group class="mt-8" deck>
+        <b-card
+          exact
+          v-for="tile in tiles"
+          v-bind:key="tile.id"
+          @click="navigate(tile.route)"
+          :title="tile.title"
+          bg-variant="dark"
+          text-variant="white"
+          class="tile text-center"
+        >
+          <lottie-player :src="tile.animation" background="transparent" speed="1" loop autoplay></lottie-player>
         </b-card>
       </b-card-group>
-      <div class="mt-12 text-center">        
+      <div class="mt-8 text-center">        
         <social-links></social-links>          
-      </div>     
+      </div>
     </v-flex>
   </v-layout>
 </template>
@@ -47,11 +61,12 @@ export default {
     SocialLinks
   },
   computed: {
-    user(){
+    user() {
       return this.$store.state.user.userInfo
     }
   },
-  data(){
+  transition: 'fade',
+  data() {
     return {
       description: 'This site is away for me to expand my brand :) ',
       tiles: [
@@ -96,17 +111,16 @@ export default {
       } catch (error) {}
     }
   }
-  
 }
 </script>
 <style scoped>
-  .bg-dark {
-    background-color: #424242 !important;
-  }
-  /* .tile{
+.bg-dark {
+  background-color: #424242 !important;
+}
+/* .tile{
     max-width: 200px;
   } */
-  .tile:hover {
-    transform: scale(1.05);
+.tile:hover {
+  transform: scale(1.05);
 }
 </style>

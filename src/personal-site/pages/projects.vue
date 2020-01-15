@@ -12,12 +12,14 @@
 <script>
 import ProjectCarouselCard from '../components/projects/ProjectCarouselCard'
 import PageHeader from '../components/shared/PageHeader.vue'
+
 export default {
   components: {
      ProjectCarouselCard,
-     PageHeader
+     PageHeader     
      
   },
+  transition: 'fade',
   computed: {
     projects(){
       return this.$store.state.projects.projects;

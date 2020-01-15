@@ -1,7 +1,10 @@
 <template>
-  <v-chip>
-      <v-icon left :color="tech.name | techIconColor">{{tech.name | techIcon}}</v-icon>
-      {{tech.name}}
+  <v-chip >
+      <i v-if="tech.name == 'VueJs'" style="font-size: 20px;" class="devicon-vuejs-plain colored mr-2"/> 
+      <i v-if="tech.name == 'Git'" style="font-size: 20px;" class="devicon-git-plain colored mr-2"/> 
+      <v-icon v-else  left :color="tech.name | techIconColor">{{tech.name | techIcon}}</v-icon>
+      
+         {{tech.name}}
   </v-chip>
 </template>
 
@@ -19,6 +22,9 @@ export default {
                 case 'Angular':
                     return 'mdi-angular'
                     break;
+                case 'Azure':
+                    return 'mdi-azure'
+                    break;
             }
                 
         },
@@ -29,6 +35,9 @@ export default {
                     break;
                 case 'Angular':
                     return 'red'
+                    break;
+                case 'Azure':
+                    return 'blue'
                     break;
             }
                 

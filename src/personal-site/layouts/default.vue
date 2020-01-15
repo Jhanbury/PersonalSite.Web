@@ -2,15 +2,15 @@
   <v-app :style="{background: $vuetify.theme.themes[theme].background}">
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
-      :color="$vuetify.theme.themes[theme].accent"
+      :mini-variant="miniVariant"      
       :clipped="clipped"
       :style="{background: $vuetify.theme.themes[theme].background}"
       fixed
       app
     >
-    <!-- <logo/> -->
-      <v-list>
+      
+      <v-list shaped>
+        <v-subheader>JOHNHANBURY.DEV</v-subheader>
         <v-list-item
           
           v-for="(item, i) in items"
@@ -28,7 +28,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
+    <!-- <v-app-bar
       :style="{background: $vuetify.theme.themes[theme].background}"
       :clipped-left="clipped"
       fixed
@@ -37,12 +37,24 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />      
       <v-toolbar-title v-text="title" :style="{color: $vuetify.theme.themes[theme].accent}" />
       <v-spacer /> 
-      <v-btn class="ma-2" outlined color="white">Get in Touch</v-btn>     
-    </v-app-bar>
+      <v-btn class="ma-2" outlined :color="$vuetify.theme.themes[theme].accent">Get in Touch</v-btn>     
+    </v-app-bar> -->
     <v-content>
-      <v-container>
+      
+        <v-row class="ma-5 mb-0">
+          <v-icon size="xx-large" :color="$vuetify.theme.themes[theme].accent" @click="drawer = !drawer" >mdi-apps</v-icon>
+          <v-spacer/>
+          <!-- <v-chip label :text-color="$vuetify.theme.themes[theme].accent" class="text-center">JOHNHANBURY.DEV</v-chip> -->
+          <!-- <social-links></social-links> -->
+          <v-spacer/>
+          <v-btn  outlined :color="$vuetify.theme.themes[theme].accent">Get in Touch</v-btn>
+        </v-row>
+              
+      <v-container>        
         <nuxt />
+        
       </v-container>
+      
     </v-content>
     
     <!-- <v-footer
@@ -56,8 +68,10 @@
 
 <script>
 import Logo  from "~/components/Logo.vue";
+import SocialLinks from "~/components/social/SocialLinks"
 export default {
   components: {
+    SocialLinks,
     Logo
   },
   computed:{
@@ -111,3 +125,11 @@ export default {
   }
 }
 </script>
+<style>
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.7s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+</style>

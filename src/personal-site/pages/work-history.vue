@@ -21,6 +21,7 @@ export default {
     TimelineCard,
     PageHeader
   },
+  transition: 'fade',
   computed:{
     timeline(){
       return this.$store.state.career.timeline;
@@ -39,10 +40,5 @@ export default {
 </script>
 
 <style>
-  .page-enter-active, .page-leave-active {
-  transition: opacity .5s
-}
-.page-enter, .page-leave-active {
-  opacity: 0
-}
+  
 </style>

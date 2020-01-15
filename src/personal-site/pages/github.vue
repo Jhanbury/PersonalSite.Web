@@ -22,6 +22,7 @@ export default {
       return this.$store.state.github.repos
     }
   },
+  transition: 'fade',
   mounted: function() {
     this.refreshRepos()
   },

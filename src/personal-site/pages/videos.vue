@@ -23,6 +23,7 @@ export default {
         Account,
         PageHeader
     },
+    transition: 'fade',
     computed: {
         platforms(){
             return this.$store.state.videos.platforms

@@ -1,6 +1,6 @@
 <template>
   <v-chip>
-      <v-icon left color="white">{{skill.name | skillIcon}}</v-icon>
+      <v-icon small left color="white">{{skill.name | skillIcon}}</v-icon>
       {{skill.name}}
   </v-chip>
 </template>
@@ -18,6 +18,15 @@ export default {
                     break;
                 case 'Database Design':
                     return 'mdi-database'
+                    break;
+                case 'Cloud Development':
+                    return 'mdi-cloud-braces'
+                    break;
+                case 'Backend Development':
+                    return 'mdi-server'
+                    break;
+                case 'Frontend Development':
+                    return 'mdi-file-code'
                     break;
             }
                 
