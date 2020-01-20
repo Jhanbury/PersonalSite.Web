@@ -1,5 +1,5 @@
 <template>
-  <v-avatar size="150">
+  <v-avatar class="ml-5 mt-5 " size="100">
       <img
         src="https://avatars1.githubusercontent.com/u/11406932?s=460&v=4"
         alt="John"

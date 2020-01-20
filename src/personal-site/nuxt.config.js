@@ -51,7 +51,8 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    'nuxt-fontawesome'
   ],
   /*
    ** Axios module configuration
@@ -86,9 +87,6 @@ export default {
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
     extend(config, ctx) {}
   }
 }

@@ -1,24 +1,10 @@
 <template>
-
   <v-layout column justify-center align-center>
     <v-flex xs12 sm8 md10>
-      <b-jumbotron lead=".NET Fullstack Developer" bg-variant="dark">
+      <b-jumbotron class="py-8" lead=".NET Fullstack Developer" bg-variant="dark">
         <template v-slot:header>{{user.firstName }} {{user.lastName}}</template>
         <hr class="my-4" />
-        <p class>{{user.personalStatement}}</p>
-
-        <!-- </br>      -->
-        <!-- <div class="mt-6 text-center">
-          <div class="display-2">{{user.firstName }} {{user.lastName}}</div>    
-        </div>
-        <div class="mt-8 text-center">
-          <div class="display-1">.NET Fullstack Developer</div>    
-        </div>-->
-
-        <!-- <div class="mt-8
-        text-center">
-          <div class="ml-12 mr-12 pl-12 pr-12 title">{{user.personalStatement }} </div>    
-        </div>-->
+        <p style="width: 53.5em" class="mr-12 pr-12 text-justify">{{user.personalStatement}}</p>
         <div class="mt-10 text-center">
           <v-chip color="#212221">
             <v-icon left color="red">mdi-map-marker</v-icon>
@@ -42,8 +28,8 @@
           <lottie-player :src="tile.animation" background="transparent" speed="1" loop autoplay></lottie-player>
         </b-card>
       </b-card-group>
-      <div class="mt-8 text-center">        
-        <social-links></social-links>          
+      <div class="mt-8 text-center">
+        <social-links></social-links>
       </div>
     </v-flex>
   </v-layout>
