@@ -68,7 +68,7 @@
 
 <script>
 import Logo  from "~/components/Logo.vue";
-import SocialLinks from "~/components/social/SocialLinks"
+import SocialLinks from "~/components/social/SocialLinks.vue"
 export default {
   components: {
     SocialLinks,

@@ -22,8 +22,7 @@ export default {
       { rel: 'stylesheet', href: 'devicon-colors.css' }
     ]
   },
-  env: {
-  },
+  env: {},
   /*
    ** Customize the progress-bar color
    */
@@ -39,10 +38,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    '@nuxtjs/vuetify',
-    '@nuxtjs/date-fns'
-  ],
+  buildModules: ['@nuxtjs/date-fns'],
   /*
    ** Nuxt.js modules
    */
@@ -87,6 +83,9 @@ export default {
    ** Build configuration
    */
   build: {
-    extend(config, ctx) {}
+    /*
+     ** You can extend webpack config here
+     */
+    extend (config, ctx) {}
   }
 }

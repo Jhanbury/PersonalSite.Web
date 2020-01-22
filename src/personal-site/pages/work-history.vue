@@ -3,12 +3,11 @@
   <v-row class="d-flex justify-center mb-6">
     <page-header title="Career Timeline"/>  
   </v-row>
-  <v-row justify="center" class="d-flex mb-2">
-    <v-col cols="10">
-      <v-timeline>
+  <v-row :justify="$vuetify.breakpoint.xsOnly ? 'start' : 'center'" class="d-flex mb-6">    
+      <v-timeline :dense="$vuetify.breakpoint.xsOnly">
         <Timeline-Card v-for="event in timeline" v-bind:key="event.title" :item="event"/>
       </v-timeline>
-    </v-col>
+    
   </v-row>
 </v-container>
 </template>

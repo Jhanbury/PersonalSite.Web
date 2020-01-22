@@ -4,12 +4,9 @@
       <b-jumbotron class="py-8" lead=".NET Fullstack Developer" bg-variant="dark">
         <template v-slot:header>{{user.firstName }} {{user.lastName}}</template>
         <hr class="my-4" />
-        <p style="width: 53.5em" class="mr-12 pr-12 text-justify">{{user.personalStatement}}</p>
+        <p style="max-width: 53.5em" class="mr-12 pr-12 text-justify">{{user.personalStatement}}</p>
         <div class="mt-10 text-center">
-          <v-chip color="#212221">
-            <v-icon left color="red">mdi-map-marker</v-icon>
-            {{user.currentLocation }}
-          </v-chip>
+          <location-chip color="red" backgroundColor="#212221" :location="user.currentLocation" />
         </div>
       </b-jumbotron>
 
@@ -39,12 +36,14 @@
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 import SocialLinks from '~/components/social/SocialLinks.vue'
+import LocationChip from '../components/shared/LocationChip.vue'
 
 export default {
   components: {
     Logo,
     VuetifyLogo,
-    SocialLinks
+    SocialLinks,
+    LocationChip
   },
   computed: {
     user() {

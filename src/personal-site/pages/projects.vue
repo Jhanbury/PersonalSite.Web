@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ProjectCarouselCard from '../components/projects/ProjectCarouselCard'
+import ProjectCarouselCard from '../components/projects/ProjectCarouselCard.vue'
 import PageHeader from '../components/shared/PageHeader.vue'
 
 export default {

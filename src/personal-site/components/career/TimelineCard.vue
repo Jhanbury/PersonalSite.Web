@@ -1,21 +1,39 @@
 <template>
-  <v-timeline-item :icon="item.timeLineType | typeIcon">
+  <v-timeline-item :icon="item.timeLineType | typeIcon" >
         <template v-slot:opposite>
             <span>{{ $dateFns.format(item.date, 'do MMMM yyyy') }}</span>
-          </template>
-      <v-card class="elevation-2" >          
-          <v-card-title class="headline">{{item.title}}</v-card-title>
-          <v-card-text>
-            {{item.subTitle}}
-          </v-card-text>
-        </v-card>
+        </template>
+        <job-time-line-card :job="item" :cardWidth="cardWidth" v-show="item.timeLineType == 'Job'"/>
+        <degree-timeline-card :degree="item" :cardWidth="cardWidth" v-show="item.timeLineType == 'Degree'"/>
+        <certification-timeline-card :cert="item" :cardWidth="cardWidth" v-show="item.timeLineType == 'Certification'"/>
+
+      
   </v-timeline-item>
 </template>
 
 <script>
+import JobTimeLineCard from './JobTimelineCard.vue'
+import DegreeTimelineCard from './DegreeTimelineCard.vue'
+import CertificationTimelineCard from './CertificationTimelineCard.vue'
 export default {
   props: {
       item: Object
+  },
+  components: {
+    JobTimeLineCard,
+    DegreeTimelineCard,
+    CertificationTimelineCard
+  },
+  computed:{
+    cardWidth(){
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return 'auto'
+          case 'sm': return 'auto'
+          case 'md': return '60em'
+          case 'lg': return '60em'
+          case 'xl': return '60em'
+      }
+    }
   },
   filters: {
     typeIcon : function(value) {

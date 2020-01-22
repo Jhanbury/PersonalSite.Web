@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import ViewCounter from '../shared/ViewCounter'
+import ViewCounter from '../shared/ViewCounter.vue'
 export default {
   data: function() {
     return {
