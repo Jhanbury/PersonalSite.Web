@@ -1,5 +1,4 @@
 <template>
-  <v-carousel-item class="ml-12 pl-6 pr-6 mr-12" fill-height>
     <b-card bg-variant="dark">
       <b-card-title>{{project.title}}</b-card-title>
       <b-card-sub-title>{{project.projectType}}</b-card-sub-title>
@@ -15,7 +14,7 @@
         <v-btn outlined small color="white">View Source</v-btn>
       </div>
     </b-card>
-  </v-carousel-item>
+  
 </template>
 
 <script>

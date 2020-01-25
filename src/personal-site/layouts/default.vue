@@ -47,7 +47,7 @@
           <!-- <v-chip label :text-color="$vuetify.theme.themes[theme].accent" class="text-center">JOHNHANBURY.DEV</v-chip> -->
           <!-- <social-links></social-links> -->
           <v-spacer/>
-          <v-btn @click="navigate('contact')" outlined small :color="$vuetify.theme.themes[theme].accent">Get in Touch</v-btn>
+          <!-- <v-btn @click="navigate('contact')" outlined small :color="$vuetify.theme.themes[theme].accent">Get in Touch</v-btn> -->
         </v-row>
               
       <v-container>        
@@ -113,7 +113,7 @@ export default {
         {
           icon: 'mdi-video-account',
           title: 'Videos',
-          to: '/videos'
+          to: '/videoaccounts'
         }
       ],
       miniVariant: false,
