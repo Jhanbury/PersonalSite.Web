@@ -47,6 +47,7 @@
           <!-- <v-chip label :text-color="$vuetify.theme.themes[theme].accent" class="text-center">JOHNHANBURY.DEV</v-chip> -->
           <!-- <social-links></social-links> -->
           <v-spacer/>
+          <stream-notification-chip></stream-notification-chip>
           <!-- <v-btn @click="navigate('contact')" outlined small :color="$vuetify.theme.themes[theme].accent">Get in Touch</v-btn> -->
         </v-row>
               
@@ -68,11 +69,13 @@
 
 <script>
 import Logo  from "~/components/Logo.vue";
-import SocialLinks from "~/components/social/SocialLinks.vue"
+import SocialLinks from "~/components/social/SocialLinks.vue";
+import StreamNotificationChip from '../components/videos/StreamNotificationChip.vue'
 export default {
   components: {
     SocialLinks,
-    Logo
+    Logo,
+    StreamNotificationChip
   },
   computed:{
     theme(){

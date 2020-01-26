@@ -1,10 +1,26 @@
 export const state = () => ({
-  platforms: []
+  platforms: [],
+  stream: {
+    url: null,
+    platform: null,
+    isLive: false
+  }
 })
 
 export const mutations = {
   update (state, platforms) {
     state.platforms = platforms
+  },
+  updateStream (state, stream) {
+    if (stream == null) {
+      state.stream = {
+        url: null,
+        platform: null,
+        isLive: false
+      }
+    } else {
+      state.stream = stream
+    }
   }
 }
 export const actions = {
@@ -13,6 +29,13 @@ export const actions = {
     const result = await this.$axios.get(fullUrl)
     if (result) {
       commit('update', result.data)
+    }
+  },
+  async getStreamInfo ({ commit }, userId) {
+    const fullUrl = `api/userinfo/${userId}/livestreams`
+    const result = await this.$axios.get(fullUrl)
+    if (result) {
+      commit('updateStream', result.data)
     }
   }
 }
