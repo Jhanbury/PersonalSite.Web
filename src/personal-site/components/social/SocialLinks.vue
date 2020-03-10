@@ -26,7 +26,7 @@ export default {
         socialIcon : function(value) {
             switch (value) {
                 case 'Github':
-                    return 'mdi-github-circle'                    
+                    return 'mdi-github'                    
                     break;
                 case 'Twitter':
                     return 'mdi-twitter'                    
@@ -34,7 +34,7 @@ export default {
                 case 'Stack Overflow':
                     return 'mdi-stack-overflow'
                 case 'Linkedin':
-                    return 'mdi-linkedin-box' 
+                    return 'mdi-linkedin' 
                 case 'Dev Community':
                     return 'mdi-dev-to'                      
                 default:
