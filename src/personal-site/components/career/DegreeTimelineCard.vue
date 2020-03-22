@@ -10,7 +10,7 @@
       {{degree.subTitle}}
     </v-card-text>
     <v-card-actions>
-      <span v-show="$vuetify.breakpoint.xsOnly">{{ $dateFns.format(degree.date, 'do MMMM yyyy') }}</span>
+      <span v-show="$vuetify.breakpoint.xsOnly">{{ degree.formattedDate }}</span>
     </v-card-actions>
   </v-card>
 </template>

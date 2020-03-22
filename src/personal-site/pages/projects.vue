@@ -4,9 +4,24 @@
       <page-header title="My Projects" />
     </v-row>
     <v-row justify="center" class="d-flex mb-2">
-      <b-card-group columns>
-        <ProjectCarouselCard v-for="project in projects" :key="project.id" :project="project" />
-      </b-card-group>
+      <v-item-group
+        v-model="selected"
+        multiple
+      >
+        <v-row>
+          <v-col
+            v-for="(project, i) in projects"
+            :key="i"
+            cols="12"
+            md="6"
+            sm="12"
+          >
+            <v-item>
+              <ProjectCarouselCard :project="project" />
+            </v-item>
+          </v-col>
+        </v-row>
+      </v-item-group>
     </v-row>
   </v-container>
 </template>

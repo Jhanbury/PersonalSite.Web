@@ -7,7 +7,9 @@
     <v-card-subtitle>{{cert.subTitle}}</v-card-subtitle>
     <v-card-text>{{cert.smallText}}</v-card-text>
     <v-card-actions>
-      <span v-show="$vuetify.breakpoint.xsOnly">{{ $dateFns.format(cert.date, 'do MMMM yyyy') }}</span>
+      <span
+        v-show="$vuetify.breakpoint.xsOnly"
+      >{{ cert.formattedDate }}</span>
     </v-card-actions>
   </v-card>
 </template>

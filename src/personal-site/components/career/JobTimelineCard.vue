@@ -12,7 +12,7 @@
       
     </v-card-text>
     <v-card-actions>
-      <span v-show="$vuetify.breakpoint.xsOnly">{{ $dateFns.format(job.date, 'do MMMM yyyy') }}</span>
+      <span v-show="$vuetify.breakpoint.xsOnly">{{ job.formattedDate }}</span>
     </v-card-actions>
   </v-card>
   <!-- <v-card class="mx-auto"  :width="cardWidth">

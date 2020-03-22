@@ -38,7 +38,15 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxtjs/date-fns'],
+  buildModules: [
+    '@nuxtjs/date-fns',
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-160266639-1'
+      }
+    ]
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -86,6 +94,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend (config, ctx) {}
+    extend(config, ctx) {}
   }
 }
