@@ -1,15 +1,13 @@
 <template>
-  <v-card color="green" dark :width="cardWidth">
+  <v-card :width="cardWidth" color="green" dark>
     <v-card-title>
       <!-- <v-icon large left>mdi-twitter</v-icon> -->
-      <span class="title font-weight-light">{{job.title}}</span>
-      
+      <span class="title font-weight-light">{{ job.title }}</span>
     </v-card-title>
-    <v-card-subtitle>at {{job.subTitle}}</v-card-subtitle>
+    <v-card-subtitle>at {{ job.subTitle }}</v-card-subtitle>
     <v-card-text>
-        <v-icon class="pb-1" color="red">mdi-map-marker</v-icon>
-      {{job.smallText}}
-      
+      <v-icon class="pb-1" color="red">mdi-map-marker</v-icon>
+      {{ job.smallText }}
     </v-card-text>
     <v-card-actions>
       <span v-show="$vuetify.breakpoint.xsOnly">{{ job.formattedDate }}</span>
@@ -36,5 +34,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

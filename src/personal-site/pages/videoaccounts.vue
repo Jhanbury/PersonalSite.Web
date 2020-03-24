@@ -1,14 +1,20 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-row class="d-flex justify-center mb-6">
       <page-header title="Video Platforms" />
     </v-row>
-    <v-row justify="center" class="d-flex mb-2">
-      <div>
-        <v-list-item-group color="primary">
-          <Account v-for="platform in platforms" v-bind:key="platform.id" :platform="platform"  />
-        </v-list-item-group>
-      </div>
+    <v-row align="stretch">
+      <v-col cols="12">
+        <v-item-group multiple>
+          <v-row align="stretch" justify="center">
+            <v-col v-for="(platform, i) in platforms" :key="i" cols="12" md="6" lg="6" sm="12">
+              <v-item>
+                <Account :platform="platform" />
+              </v-item>
+            </v-col>
+          </v-row>
+        </v-item-group>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -39,8 +45,7 @@ export default {
     navigate(route) {
       this.drawer = false
       this.$router.push(route)
-    },
-    
+    }
   }
 }
 </script>

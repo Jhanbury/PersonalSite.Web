@@ -1,9 +1,8 @@
 <template>
-  <div class="d-flex justify-center"  @click="openAccount(platform.link)">
+  <div >
     <youtube-account v-if="platform.platform == 'YouTube'" :account="platform" />
-    <twitch-account v-if="platform.platform == 'Twitch'" :account="platform"/>
+    <twitch-account v-if="platform.platform == 'Twitch'" :account="platform" />
   </div>
-    
 </template>
 
 <script>
