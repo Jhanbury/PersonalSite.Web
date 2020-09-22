@@ -25,14 +25,14 @@ export const mutations = {
 }
 export const actions = {
   async getPlatformVideos ({ commit }, userId) {
-    const fullUrl = `api/userinfo/${userId}/videos`
+    const fullUrl = `/api/user/${userId}/videos`
     const result = await this.$axios.get(fullUrl)
     if (result) {
       commit('update', result.data)
     }
   },
   async getStreamInfo ({ commit }, userId) {
-    const fullUrl = `api/userinfo/${userId}/livestreams`
+    const fullUrl = `/api/user/${userId}/livestreams`
     const result = await this.$axios.get(fullUrl)
     if (result) {
       commit('updateStream', result.data)

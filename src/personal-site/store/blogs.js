@@ -9,7 +9,7 @@ export const mutations = {
 }
 export const actions = {
   async getUserBlogs ({ commit }, userId) {
-    const fullUrl = `api/userinfo/${userId}/blogposts`
+    const fullUrl = `/api/user/${userId}/blogs`
     const result = await this.$axios.get(fullUrl)
     if (result) {
       commit('update', result.data)
