@@ -1,0 +1,41 @@
+name: Personal Site Web Release Build
+on: 
+  push:
+    branches:
+        - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      - name: Install Dependencies
+        working-directory: 'src/personal-site'
+        run: |
+          npm install
+        env:
+          CI: true  
+
+      - name: Deploy to Azure
+        uses: feeloor/azure-static-website-deploy@v0.1.1
+        env:
+          SOURCE_DIR: "./public"
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_SECRET: ${{ secrets.AZURE_STORAGE_SECRET }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUB_ID }}
+          AZURE_STORAGE_ACCOUNT_NAME: ${{ secrets.AZURE_STORAGE_ACOUNT_NAME }}
+          AZURE_INDEX_DOCUMENT_NAME: "index.html"
+          AZURE_ERROR_DOCUMENT_NAME: "error.html"
+         

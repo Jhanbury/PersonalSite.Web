@@ -1,6 +1,14 @@
 <template>
   <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md10>
+    <v-flex align-center v-if="isLoading" xs12 sm8 md10>
+      <v-progress-circular
+      class="align-middle"
+      :size="50"
+      color="yellow"
+      indeterminate
+    ></v-progress-circular>
+    </v-flex>
+    <v-flex v-else xs12 sm8 md10>
       <b-jumbotron class="py-8" lead=".NET Fullstack Developer" bg-variant="dark">
         <template v-slot:header>{{user.firstName }} {{user.lastName}}</template>
         <hr class="my-4" />
@@ -48,6 +56,9 @@ export default {
   computed: {
     user() {
       return this.$store.state.user.userInfo
+    },
+    isLoading() {
+      return this.$store.state.user.isLoading
     }
   },
   transition: 'fade',

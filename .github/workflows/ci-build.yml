@@ -1,5 +1,4 @@
-name: Node CI
-
+name: Personal Site Web CI Build
 on: 
   pull_request:
     branches: 
@@ -16,10 +15,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    
     - name: Install Dependencies
       working-directory: 'src/personal-site'
       run: |
@@ -31,5 +32,12 @@ jobs:
       working-directory: 'src/personal-site'
       run: |
         npm run build
+      env:
+        CI: true
+
+    - name: Run Tests
+      working-directory: 'src/personal-site'
+      run: |
+        jest
       env:
         CI: true
