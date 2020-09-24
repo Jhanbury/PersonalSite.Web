@@ -32,6 +32,7 @@ jobs:
           npm run build
         env:
           CI: true
+          NUXT_ENV_API_URL: ${{ secrets.API_URL }}
           
       - name: Deploy to Azure
         uses: feeloor/azure-static-website-deploy@v0.1.1
