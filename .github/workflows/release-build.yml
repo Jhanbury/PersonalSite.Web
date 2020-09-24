@@ -39,7 +39,7 @@ jobs:
           SOURCE_DIR: "src/personal-site/dist"
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-          AZURE_SECRET: ${{ secrets.AZURE_STORAGE_SECRET }}
+          AZURE_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
           AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUB_ID }}
           AZURE_STORAGE_ACCOUNT_NAME: ${{ secrets.AZURE_STORAGE_ACOUNT_NAME }}
           AZURE_INDEX_DOCUMENT_NAME: "index.html"
