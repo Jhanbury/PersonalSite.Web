@@ -9,12 +9,11 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [12.18.x]
 
 
     steps:
       - uses: actions/checkout@v1
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -26,11 +25,18 @@ jobs:
           npm install
         env:
           CI: true  
-
+          
+      - name: Build Project
+        working-directory: 'src/personal-site'
+        run: |
+          npm run build
+        env:
+          CI: true
+          
       - name: Deploy to Azure
         uses: feeloor/azure-static-website-deploy@v0.1.1
         env:
-          SOURCE_DIR: "./public"
+          SOURCE_DIR: "src/personal-site/dist"
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           AZURE_SECRET: ${{ secrets.AZURE_STORAGE_SECRET }}
