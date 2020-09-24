@@ -1,8 +1,8 @@
 name: Personal Site Web Release Build
-on: 
+on:
   push:
     branches:
-        - master
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,29 +11,28 @@ jobs:
       matrix:
         node-version: [12.18.x]
 
-
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      
+
       - name: Install Dependencies
-        working-directory: 'src/personal-site'
+        working-directory: "src/personal-site"
         run: |
           npm install
         env:
-          CI: true  
-          
+          CI: true
+
       - name: Build Project
-        working-directory: 'src/personal-site'
+        working-directory: "src/personal-site"
         run: |
           npm run build
         env:
           CI: true
           NUXT_ENV_API_URL: ${{ secrets.API_URL }}
-          
+
       - name: Deploy to Azure
         uses: feeloor/azure-static-website-deploy@v0.1.1
         env:
@@ -45,4 +44,3 @@ jobs:
           AZURE_STORAGE_ACCOUNT_NAME: ${{ secrets.AZURE_STORAGE_ACOUNT_NAME }}
           AZURE_INDEX_DOCUMENT_NAME: "index.html"
           AZURE_ERROR_DOCUMENT_NAME: "error.html"
-         
