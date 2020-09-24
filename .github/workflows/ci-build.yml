@@ -38,6 +38,6 @@ jobs:
     - name: Run Tests
       working-directory: 'src/personal-site'
       run: |
-        jest
+        npm run test
       env:
         CI: true
