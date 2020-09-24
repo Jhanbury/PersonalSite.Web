@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Account from '~/components/videos/Account.Vue'
+import Account from '../components/videos/Account.Vue'
 import PageHeader from '../components/shared/PageHeader.vue'
 export default {
   components: {
