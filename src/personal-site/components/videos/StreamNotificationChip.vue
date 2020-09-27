@@ -1,12 +1,14 @@
 <template>
-  <v-chip @click="openStream(stream.url)" v-show="stream.isLive">
-    <v-avatar left>
-      <v-icon color="red">mdi-record</v-icon>
-    </v-avatar>
-    <span class="mr-1">Streaming on</span>
-    <v-avatar right color="white">
+  <v-chip color="white" @click="openStream(stream.url)" v-show="stream.isLive">
+    <v-avatar left color="white">
       <v-icon small :color="stream.platform | iconColor">{{stream.platform | icon}}</v-icon>
     </v-avatar>
+    <span class="black--text">{{stream.streamer}}</span>
+    <v-avatar right>
+      <v-icon small color="red">mdi-record</v-icon>      <!--  -->
+    </v-avatar>
+    <span right class="black--text ml-1">15</span>
+    
   </v-chip>
 </template>
 

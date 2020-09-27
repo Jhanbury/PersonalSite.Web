@@ -5,7 +5,7 @@
     </v-row>
     <v-row justify="center" class="d-flex mb-2">
       <v-item-group
-        v-model="selected"
+        
         multiple
       >
         <v-row>
