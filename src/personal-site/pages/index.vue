@@ -41,9 +41,9 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-import SocialLinks from '~/components/social/SocialLinks.vue'
+import Logo from '../components/Logo.vue'
+import VuetifyLogo from '../components/VuetifyLogo.vue'
+import SocialLinks from '../components/social/SocialLinks.vue'
 import LocationChip from '../components/shared/LocationChip.vue'
 
 export default {
@@ -88,7 +88,7 @@ export default {
           id: 4,
           title: 'Videos',
           animation: 'animations/video.json',
-          route: 'videos'
+          route: 'videoaccounts'
         }
       ]
     }
