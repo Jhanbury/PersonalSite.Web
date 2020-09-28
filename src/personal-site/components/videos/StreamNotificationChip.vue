@@ -7,7 +7,6 @@
     <v-avatar right>
       <v-icon small color="red">mdi-record</v-icon>      <!--  -->
     </v-avatar>
-    <span right class="black--text ml-1">15</span>
     
   </v-chip>
 </template>
