@@ -58,6 +58,13 @@ export default {
     '@nuxtjs/dotenv',
     'nuxt-fontawesome'
   ],
+  pwa: {
+    manifest: {
+      name: 'John Hanbury',
+      lang: 'en',
+      useWebmanifestExtension: false
+    }
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
