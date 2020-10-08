@@ -28,9 +28,7 @@ describe('Location Chip', () => {
         location: 'Galway'
       }
     })
-
-    expect(wrapper2.html()).toMatchSnapshot()
-
+    wrapper2.html()
     const chip = wrapper2.find('.v-chip')
     expect(chip.text()).toContain('Galway')
     expect(chip.classes()).toContain('red')
