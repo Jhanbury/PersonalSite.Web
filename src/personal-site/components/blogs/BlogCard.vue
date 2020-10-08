@@ -9,13 +9,11 @@
     class="mb-2"
     style="max-width:30em"
   >
-  
     <b-card-body>
       <v-chip label color="white" class="pa-0 float-top float-right">
-        <v-icon
-            :color="blog.source | socialIconColor"
-          size="xxx-large"
-        >{{ blog.source | socialIcon }}</v-icon>
+        <v-icon :color="blog.source | socialIconColor" size="xxx-large">
+          {{ blog.source | socialIcon }}
+        </v-icon>
       </v-chip>
     </b-card-body>
     <b-card-sub-title>{{ blog.authorName }}</b-card-sub-title>
