@@ -1,36 +1,22 @@
 <template>
   <div>
     <v-icon
-      class="social-icon m-2"
-      size="xxx-large"
       v-for="link in socialLinks"
       v-bind:key="link.id"
       @click="openAccount(link.accountUrl)"
       :color="link.platform | socialIconColor"
-    >{{link.platform | socialIcon}}</v-icon>
+      class="social-icon m-2"
+      size="xxx-large"
+    >
+      {{ link.platform | socialIcon }}
+    </v-icon>
   </div>
 </template>
 
 <script>
 export default {
-  computed: {
-    socialLinks () {
-      return this.$store.state.user.socialLinks
-    }
-  },
-  methods: {
-    refreshSocialLinks () {
-      this.$store.dispatch('user/getSocialLinks', 1)
-    },
-    openAccount(url) {
-      window.open(url)
-    }
-  },
-  mounted: function() {
-    this.refreshSocialLinks()
-  },
   filters: {
-    socialIcon: function(value) {
+    socialIcon(value) {
       switch (value) {
         case 'Github':
           return 'mdi-github'
@@ -55,14 +41,14 @@ export default {
           break
       }
     },
-    socialIconColor: function(value) {
+    socialIconColor(value) {
       switch (value) {
         case 'Github':
           return 'white'
-          
+
         case 'Twitter':
           return 'blue'
-          
+
         case 'Stack Overflow':
           return 'orange'
         case 'Youtube':
@@ -77,6 +63,22 @@ export default {
           return 'mdi-work'
           break
       }
+    }
+  },
+  computed: {
+    socialLinks() {
+      return this.$store.state.user.socialLinks
+    }
+  },
+  mounted() {
+    this.refreshSocialLinks()
+  },
+  methods: {
+    refreshSocialLinks() {
+      this.$store.dispatch('user/getSocialLinks', 1)
+    },
+    openAccount(url) {
+      window.open(url)
     }
   }
 }

@@ -1,6 +1,9 @@
 <template>
-  <div >
-    <youtube-account v-if="platform.platform == 'YouTube'" :account="platform" />
+  <div>
+    <youtube-account
+      v-if="platform.platform == 'YouTube'"
+      :account="platform"
+    />
     <twitch-account v-if="platform.platform == 'Twitch'" :account="platform" />
   </div>
 </template>
