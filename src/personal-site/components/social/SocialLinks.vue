@@ -14,12 +14,12 @@
 <script>
 export default {
   computed: {
-    socialLinks() {
+    socialLinks () {
       return this.$store.state.user.socialLinks
     }
   },
   methods: {
-    refreshSocialLinks() {
+    refreshSocialLinks () {
       this.$store.dispatch('user/getSocialLinks', 1)
     },
     openAccount(url) {

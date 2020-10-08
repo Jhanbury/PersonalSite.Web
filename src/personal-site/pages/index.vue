@@ -1,4 +1,5 @@
 <template>
+
   <v-layout column justify-center align-center>
     <v-flex align-center v-if="isLoading" xs12 sm8 md10>
       <v-progress-circular
@@ -38,6 +39,7 @@
       </div>
     </v-flex>
   </v-layout>
+  
 </template>
 
 <script>
@@ -74,9 +76,9 @@ export default {
         },
         {
           id: 2,
-          title: 'Work History',
+          title: 'Blog Posts',
           animation: 'animations/work-experience.json',
-          route: 'work-history'
+          route: 'blogs'
         },
         {
           id: 3,
