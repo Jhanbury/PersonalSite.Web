@@ -6,75 +6,41 @@
     bg-variant="dark"
     img-top
     tag="article"
-    class="mb-2"
+    class="pa-0 mb-2"
     style="max-width:30em"
   >
-    <b-card-body>
-      <v-chip label color="white" class="pa-0 float-top float-right">
-        <v-icon :color="blog.source | socialIconColor" size="xxx-large">
-          {{ blog.source | socialIcon }}
-        </v-icon>
-      </v-chip>
+    <b-card-body class="pa-0">
+      <v-container class="pa-0">
+        <blog-author-view
+          :author="blog.authorName"
+          :avatar="blog.authorAvatar"
+          :publishDate="blog.publishDate"
+        />
+        <blog-metrics-panel :blog="blog" />
+      </v-container>
     </b-card-body>
-    <b-card-sub-title>{{ blog.authorName }}</b-card-sub-title>
-    <b-card-text>{{ blog.teaser }}</b-card-text>
+
     <template v-slot:footer>
-      <ViewCounter :views="views" :publishDate="publishDate" />
+      <v-container class="py-0">
+        <v-row>
+          <tag-list :tags="blog.tags" />
+          <v-spacer />
+          <v-col cols="auto"> {{ blog.readLength }} min read </v-col>
+        </v-row>
+      </v-container>
     </template>
   </b-card>
 </template>
 
 <script>
-import ViewCounter from '../shared/ViewCounter.vue'
+import BlogMetricsPanel from './BlogMetricsPanel.vue'
+import BlogAuthorView from './BlogAuthorView.vue'
+import TagList from './TagList.vue'
 export default {
   components: {
-    ViewCounter
-  },
-  filters: {
-    socialIcon(value) {
-      switch (value) {
-        case 'Github':
-          return 'mdi-github'
-        case 'Twitter':
-          return 'mdi-twitter'
-        case 'Youtube':
-          return 'mdi-youtube'
-        case 'Twitch':
-          return 'mdi-twitch'
-        case 'Stack Overflow':
-          return 'mdi-stack-overflow'
-        case 'Linkedin':
-          return 'mdi-linkedin'
-        case 'Dev Community':
-          return 'mdi-dev-to'
-        case 'DevTo':
-          return 'mdi-dev-to'
-        default:
-          return 'mdi-work'
-      }
-    },
-    socialIconColor(value) {
-      switch (value) {
-        case 'Github':
-          return 'white'
-        case 'Twitter':
-          return 'blue'
-        case 'Stack Overflow':
-          return 'orange'
-        case 'Youtube':
-          return 'red'
-        case 'Twitch':
-          return 'purple'
-        case 'Linkedin':
-          return '#2867B2'
-        case 'Dev Community':
-          return 'white'
-        case 'DevTo':
-          return 'black'
-        default:
-          return 'mdi-work'
-      }
-    }
+    BlogMetricsPanel,
+    BlogAuthorView,
+    TagList
   },
   props: {
     blog: { type: Object, required: true }
