@@ -1,8 +1,6 @@
 <template>
   <b-card-group columns>
-      <github-repo-card v-for="repo in repos"
-        v-bind:key="repo.id"
-        :repo="repo"></github-repo-card>
+    <github-repo-card v-for="repo in repos" v-bind:key="repo.id" :repo="repo" />
   </b-card-group>
 </template>
 
@@ -13,7 +11,10 @@ export default {
     GithubRepoCard
   },
   props: {
-      repos: Array
+    repos: {
+      type: Array,
+      required: true
+    }
   }
 }
 </script>
