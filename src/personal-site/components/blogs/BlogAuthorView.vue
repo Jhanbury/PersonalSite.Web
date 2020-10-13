@@ -28,7 +28,7 @@ export default {
       required: true
     },
     publishDate: {
-      type: Date,
+      type: String,
       required: true
     }
   }
