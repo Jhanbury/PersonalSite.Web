@@ -13,7 +13,7 @@
       <v-container class="pa-0">
         <blog-author-view
           :author="blog.authorName"
-          :avatar="blog.authorAvatar"
+          :avatar="blog.userAvatar"
           :publishDate="blog.publishDate"
         />
         <blog-metrics-panel :blog="blog" />
