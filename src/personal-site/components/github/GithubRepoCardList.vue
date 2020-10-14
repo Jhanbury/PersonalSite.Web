@@ -1,5 +1,5 @@
 <template>
-  <b-card-group columns>
+  <b-card-group columns class="pt-8">
     <github-repo-card v-for="repo in repos" v-bind:key="repo.id" :repo="repo" />
   </b-card-group>
 </template>

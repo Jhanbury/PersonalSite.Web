@@ -1,5 +1,9 @@
 <template>
-  <b-card @click="openRepo(repo.html_url)" bg-variant="dark" class="repo-card">
+  <b-card
+    @click="openRepo(repo.html_url)"
+    bg-variant="secondary"
+    class="repo-card"
+  >
     <b-card-title>{{ repo.name }}</b-card-title>
     <b-card-text class="text-start">
       {{ repo.description }}
@@ -69,7 +73,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.card-body {
+  background: #303030 !important;
+}
+.card-footer {
+  background: #303030 !important;
+}
 .repo-card:hover {
   transform: scale(1.05);
 }
