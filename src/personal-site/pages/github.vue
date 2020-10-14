@@ -1,14 +1,14 @@
 <template>
-<v-container>
-  <v-row class="d-flex justify-center mb-6">
-    <div ><i style="font-size: 100px;" class="devicon-github-plain-wordmark"/></div>
-  </v-row>
-  <v-row>
-    <github-repo-card-list :repos="repos"></github-repo-card-list>
-  </v-row>
-</v-container>
-
-  
+  <v-container>
+    <v-row class="d-flex justify-center mb-6">
+      <div>
+        <i style="font-size: 100px;" class="devicon-github-plain-wordmark" />
+      </div>
+    </v-row>
+    <v-row>
+      <github-repo-card-list :repos="repos" />
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -23,7 +23,7 @@ export default {
     }
   },
   transition: 'fade',
-  mounted: function() {
+  mounted() {
     this.refreshRepos()
   },
   methods: {
