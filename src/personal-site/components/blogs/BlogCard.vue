@@ -25,7 +25,9 @@
         <v-row>
           <tag-list :tags="blog.tags" />
           <v-spacer />
-          <v-col cols="auto"> {{ blog.readLength }} min read </v-col>
+          <v-col class="pr-0" cols="auto">
+            <small>{{ blog.readLength }} min read </small>
+          </v-col>
         </v-row>
       </v-container>
     </template>

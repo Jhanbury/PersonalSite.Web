@@ -14,7 +14,7 @@
       <v-container class="py-0">
         <v-row>
           <small>{{
-            $dateFns.format(new Date(article.publishDate), 'd MMMM')
+            $dateFns.format(new Date(article.publishDate), 'd MMMM yyyy')
           }}</small>
           <v-spacer />
           <small> {{ article.readLength }} min read </small>
