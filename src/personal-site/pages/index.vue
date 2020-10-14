@@ -76,12 +76,12 @@ export default {
     return {
       description: 'This site is away for me to expand my brand :) ',
       tiles: [
-        {
-          id: 1,
-          title: 'Projects',
-          animation: 'animations/projects.json',
-          route: 'projects'
-        },
+        // {
+        //   id: 1,
+        //   title: 'Projects',
+        //   animation: 'animations/projects.json',
+        //   route: 'projects'
+        // },
         {
           id: 2,
           title: 'Blog Posts',
