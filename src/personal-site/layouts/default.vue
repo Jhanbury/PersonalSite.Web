@@ -103,16 +103,16 @@ export default {
           title: 'Github',
           to: '/github'
         },
-        {
-          icon: 'mdi-lightbulb-on',
-          title: 'Projects',
-          to: '/projects'
-        },
-        {
-          icon: 'mdi-briefcase',
-          title: 'Work History',
-          to: '/work-history'
-        },
+        // {
+        //   icon: 'mdi-lightbulb-on',
+        //   title: 'Projects',
+        //   to: '/projects'
+        // },
+        // {
+        //   icon: 'mdi-briefcase',
+        //   title: 'Work History',
+        //   to: '/work-history'
+        // },
         {
           icon: 'mdi-video-account',
           title: 'Videos',
