@@ -6,7 +6,7 @@
     bg-variant="dark"
     img-top
     tag="article"
-    class="pa-0 mb-2"
+    class="pa-0"
     style="max-width:30em"
   >
     <b-card-body class="pa-0">
@@ -16,7 +16,7 @@
           :avatar="blog.userAvatar"
           :publishDate="blog.publishDate"
         />
-        <blog-metrics-panel :blog="blog" />
+        <blog-metrics-panel :blog="blog" class="py-0" />
       </v-container>
     </b-card-body>
 
