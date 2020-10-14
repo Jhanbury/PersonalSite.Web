@@ -8,8 +8,10 @@
       </v-col>
       <v-col>
         <v-row>{{ author }}</v-row>
-        <v-row class="body-2">
-          {{ $dateFns.format(new Date(publishDate), 'dd MMMM') }}
+        <v-row>
+          <small>{{
+            $dateFns.format(new Date(publishDate), 'd MMMM yyyy')
+          }}</small>
         </v-row>
       </v-col>
     </v-row>
